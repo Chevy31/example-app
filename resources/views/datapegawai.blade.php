@@ -11,6 +11,11 @@
       <div class ="container">
       <a href = "/tambahpegawai" class="btn btn-success">Tambah</a>
       <div class = "row">
+        @if($message = Session::get('Success'))
+        <div class="alert alert-success" role="alert">
+          {{ $message }}
+        </div>
+        @endif
           <table class="table">
               <thead>
                   <tr>
@@ -18,7 +23,8 @@
                       <th scope="col">Name</th>
                       <th scope="col">Gender</th>
                       <th scope="col">Number Telephone</th>
-                      <th scope="col">Aksi</th>
+                      <th scope="col">Date</th>
+                      <th scope="col">Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -28,6 +34,7 @@
                         <td>{{$row->Name}}</td>
                         <td>{{$row->jenisKelamin}}</td>
                         <td>0{{$row->telephone}}</td>
+                        <td>{{$row->created_at->format('D M Y')}}</td>
                         <td>
                             <button type="button" class="btn btn-danger">Delete</button>
                             <button type="button" class="btn btn-info">Edit</button>

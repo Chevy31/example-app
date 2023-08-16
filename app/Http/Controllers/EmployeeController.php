@@ -16,7 +16,8 @@ class EmployeeController extends Controller
     }
     public function insertdata(Request $request){
         
-        $data = Employee::create($request->all());
+        Employee::create($request->all());
+        return redirect()->route('pegawai')-> with('Success','Data Added');
         //return redirect()-> route('pegawai');
     }
 }
