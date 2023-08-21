@@ -40,13 +40,38 @@
                         <td>{{$row->created_at->format('D M Y')}}</td>
                         <td>
                             <a href = "/tampildata/{{$row->id}}" class="btn btn-info">Edit</a>
-                            <a href = "/deletedata/{{$row->id}}" class="btn btn-danger">Delete</a>
+                            <a href = "#" class="btn btn-danger delete" data-id="{{$row->id}}">Delete</a>
                         </td>
                     </tr>
                     @endforeach
                 </tbody>
             </table>
       </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+      <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+      <script src="https://code.jquery.com/jquery-3.7.0.slim.js" integrity="sha256-7GO+jepT9gJe9LB4XFf8snVOjX3iYNb0FHYr5LI1N5c=" crossorigin="anonymous"></script>
+
   </body>
+  <script>
+    $('.delete').click(function() {
+      var pid = $(this).attr(data-id);
+      swal({
+        title: "Are you sure?",
+        text: "Once deleted, you will not be able to recover this imaginary file!",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+      }).then((willDelete) => {
+        if (willDelete) {
+          window.location = "/deletedata/"+pid+""
+          swal("Poof! Your imaginary file has been deleted!", {
+            icon: "success",
+          });
+        } else {
+          swal("Your imaginary file is safe!");
+        }
+      });
+    });
+                
+  </script>
 </html>
