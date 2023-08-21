@@ -50,27 +50,27 @@
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
       <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
       <script src="https://code.jquery.com/jquery-3.7.0.slim.js" integrity="sha256-7GO+jepT9gJe9LB4XFf8snVOjX3iYNb0FHYr5LI1N5c=" crossorigin="anonymous"></script>
-
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw=="crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   </body>
   <script>
     $('.delete').click(function() {
-      var pid = $(this).attr(data-id);
-      swal({
-        title: "Are you sure?",
-        text: "Once deleted, you will not be able to recover this file!",
-        icon: "warning",
-        buttons: true,
-        dangerMode: true,
-      }).then((willDelete) => {
-        if (willDelete) {
-          window.location = "/deletedata/"+pid+""
-          swal("Your file has been deleted!", {
-            icon: "success",
-          });
-        } else {
-          swal("Your file is safe!");
-        }
-      });
+              var pid = $(this).attr('data-id');
+              swal({
+                title: "Are you sure?",
+                text: "Once deleted, you will not be able to recover this file!",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+              }).then((willDelete) => {
+                if (willDelete) {
+                  window.location = "/deletedata/"+pid+""
+                  swal("Your file has been deleted!", {
+                    icon: "success",
+                  });
+                } else {
+                  swal("Your file is safe!");
+                }
+              });
     });
                 
   </script>
