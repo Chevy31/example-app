@@ -15,7 +15,7 @@ use App\Http\Controllers\EmployeeController;
 */
 
 // Route::get('/', function () {
-//     return view('tampildata');
+//     return view('welcome');
 // });
 Route::get('/',[EmployeeController::class, 'index'])->name('pegawai');
 Route::get('/tambahpegawai',[EmployeeController::class, 'tambahpegawai'])->name('tambahpegawai');
