@@ -14,10 +14,10 @@ use App\Http\Controllers\EmployeeController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/pegawai',[EmployeeController::class, 'index'])->name('pegawai');
+// Route::get('/', function () {
+//     return view('tampildata');
+// });
+Route::get('/',[EmployeeController::class, 'index'])->name('pegawai');
 Route::get('/tambahpegawai',[EmployeeController::class, 'tambahpegawai'])->name('tambahpegawai');
 Route::post('/insertdata',[EmployeeController::class, 'insertdata'])->name('insertdata');
 Route::get('/tampildata/{id}',[EmployeeController::class, 'tampildata'])->name('tampildata');
