@@ -23,6 +23,9 @@
         <div class = "col-auto">
         <a href = "/eksportpdf" class="btn btn-info">Export PDF</a>
       </div>
+      <div class = "col-auto">
+        <a href = "/eksportexcel" class="btn btn-primary">Export Excel</a>
+      </div>
       <div class = "row">
         <!-- @if($message = Session::get('Success'))
         <div class="alert alert-success" role="alert">

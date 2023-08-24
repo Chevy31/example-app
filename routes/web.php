@@ -25,3 +25,4 @@ Route::post('/updatedata/{id}',[EmployeeController::class, 'updatedata'])->name(
 Route::get('/deletedata/{id}',[EmployeeController::class, 'deletedata'])->name('deletedata');
 // eksport pdf
 Route::get('/eksportpdf',[EmployeeController::class, 'eksportpdf'])->name('eksportpdf');
+Route::get('/eksportexcel',[EmployeeController::class, 'eksportexcel'])->name('eksportexcel');

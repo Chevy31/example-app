@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\EmployeeExport;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 use App\Models\Employee;
+use Maatwebsite\Excel\Facades\Excel;
 
 
 class EmployeeController extends Controller
@@ -45,5 +47,8 @@ class EmployeeController extends Controller
         view()->share('data',$data);
         $pdf = PDF::loadview('datapegawai-pdf');
         return $pdf->download();
+    }
+    public function eksportexcel(){
+        return Excel::download(new EmployeeExport,'data.xlsx');
     }
 }
