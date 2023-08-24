@@ -23,3 +23,5 @@ Route::post('/insertdata',[EmployeeController::class, 'insertdata'])->name('inse
 Route::get('/tampildata/{id}',[EmployeeController::class, 'tampildata'])->name('tampildata');
 Route::post('/updatedata/{id}',[EmployeeController::class, 'updatedata'])->name('updatedata');
 Route::get('/deletedata/{id}',[EmployeeController::class, 'deletedata'])->name('deletedata');
+// eksport pdf
+Route::get('/eksportpdf',[EmployeeController::class, 'eksportpdf'])->name('eksportpdf');
