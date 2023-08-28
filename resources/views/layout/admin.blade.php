@@ -40,10 +40,11 @@
       </li>
     </ul>
   </nav>
+  
   <!-- /.navbar -->
 <aside class="main-sidebar sidebar-light-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link">
+    <a href="/" class="brand-link">
     <img src="{{asset ('template/dist/img/BJBlogo.png') }}" alt="Logo"  class="img-fluid mx-auto d-block"width = 40% style="opacity: .8">
     </a>
 
@@ -61,12 +62,11 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-          <li class="nav-header">EXAMPLES</li>
           <li class="nav-item">
-            <a href="pages/gallery.html" class="nav-link">
+            <a href="/" class="nav-link">
               <i class="nav-icon far fa-image"></i>
               <p>
-                Gallery
+                Data KTP
               </p>
             </a>
           </li>

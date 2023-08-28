@@ -16,7 +16,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">GTW WEB APA </h1>
+            <h1 class="m-0">Input Data </h1>
           </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
@@ -79,6 +79,7 @@
                         <th scope="col">Status Perkawinan</th>
                         <th scope="col">Pekerjaan</th>
                         <th scope="col">Telephone</th>
+                        <th scope="col">Action</th>
                       </tr>
                 </thead>
                 <tbody>
