@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\InputController;
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,12 +18,21 @@ use App\Http\Controllers\EmployeeController;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-Route::get('/',[EmployeeController::class, 'index'])->name('pegawai');
-Route::get('/tambahpegawai',[EmployeeController::class, 'tambahpegawai'])->name('tambahpegawai');
-Route::post('/insertdata',[EmployeeController::class, 'insertdata'])->name('insertdata');
-Route::get('/tampildata/{id}',[EmployeeController::class, 'tampildata'])->name('tampildata');
-Route::post('/updatedata/{id}',[EmployeeController::class, 'updatedata'])->name('updatedata');
-Route::get('/deletedata/{id}',[EmployeeController::class, 'deletedata'])->name('deletedata');
-// eksport pdf
-Route::get('/eksportpdf',[EmployeeController::class, 'eksportpdf'])->name('eksportpdf');
-Route::get('/eksportexcel',[EmployeeController::class, 'eksportexcel'])->name('eksportexcel');
+Route::get('/',[InputController::class, 'index'])->name('home');
+Route::get('/tambahdata1',[InputController::class, 'tambahdata1'])->name('tambahdata1');
+Route::post('/insertdata',[InputController::class, 'insertdata'])->name('insertdata');
+Route::get('/tampildata/{id}',[InputController::class, 'tampildata'])->name('tampildata');
+Route::post('/updatedata/{id}',[InputController::class, 'updatedata'])->name('updatedata');
+Route::get('/deletedata/{id}',[InputController::class, 'deletedata'])->name('deletedata');
+// eksport pdf dan excel
+Route::get('/eksportpdf',[InputController::class, 'eksportpdf'])->name('eksportpdf');
+Route::get('/eksportexcel',[InputController::class, 'eksportexcel'])->name('eksportexcel');
+
+Route::get('/login',[LoginController::class, 'login'])->name('login');
+Route::post('/loginProcess',[LoginController::class, 'loginProcess'])->name('loginProcess');
+
+
+Route::get('/register',[LoginController::class, 'register'])->name('register');
+Route::post('/registerUser',[LoginController::class, 'registerUser'])->name('registerUser');
+
+Route::get('/logout',[LoginController::class, 'logout'])->name('logout');

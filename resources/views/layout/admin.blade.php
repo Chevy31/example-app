@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdminLTE 3 | Dashboard 3</title>
+  <title>Test</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -13,6 +13,8 @@
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="{{asset ('template/dist/css/adminlte.min.css') }}">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  @stack('css')
 </head>
 <!--
 `body` tag options:
@@ -39,48 +41,6 @@
     </ul>
   </nav>
   <!-- /.navbar -->
-
-  <!-- Main Sidebar Container -->
-  <aside class="main-sidebar sidebar-LIGHT-primary elevation-4">
-    <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link">
-      <img src="{{asset ('template/dist/img/BJBlogo.png') }}" alt="Logo"  class="img-fluid"width = 40% style="opacity: .8">
-    </a>
-
-    <!-- Sidebar -->
-    <div class="sidebar">
-      <!-- Sidebar user panel (optional) -->
-      <div class="user-panel">
-        <div class="info">
-          <a href="#" class="d-block">Alexander Pierce</a>
-        </div>
-      </div>
-
-      <!-- Sidebar Menu -->
-      <nav class="mt-5">
-        <ul class="nav nav-pills nav-sidebar" data-widget="treeview" role="menu" data-accordion="false">
-          <li class="nav-item">
-            <a href="pages/gallery.html" class="nav-link">
-              <i class="nav-icon far fa-image"></i>
-              <p>
-                Gallery
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="pages/kanban.html" class="nav-link">
-              <i class="nav-icon fas fa-columns"></i>
-              <p>
-                Kanban Board
-              </p>
-            </a>
-          </li>
-        </ul>
-      </nav>
-      <!-- /.sidebar-menu -->
-    </div>
-    <!-- /.sidebar -->
-  </aside>
 <aside class="main-sidebar sidebar-light-primary elevation-4">
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
@@ -92,7 +52,7 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="info">
-          <a href="#" class="d-block">Alexander Pierce</a>
+          <label class="d-block">Welcome, {{ Auth::user()->name }}</label>
         </div>
       </div>
 
@@ -111,10 +71,19 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="pages/kanban.html" class="nav-link">
-              <i class="nav-icon fas fa-columns"></i>
+            <a href="/register" class="nav-link">
+              <i class="nav-icon fas fa-user"></i>
               <p>
-                Kanban Board
+                Tambah User
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/logout" class="nav-link">
+                <i class="nav-icon fas fa-sign-out-alt"></i>
+
+              <p>
+                Logout
               </p>
             </a>
           </li>
@@ -135,7 +104,7 @@
 
   <!-- Main Footer -->
   <footer class="main-footer">
-    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
+    <strong>Copyright &copy; BJB.</strong>
     All rights reserved.
     <div class="float-right d-none d-sm-inline-block">
       <b>Version</b> 3.1.0
@@ -152,5 +121,6 @@
 <script src="{{asset ('template/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <!-- AdminLTE -->
 <script src="{{asset ('template/dist/js/adminlte.js') }}"></script>
+@stack('scripts')
 </body>
 </html>
