@@ -12,16 +12,25 @@
                               <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Nama</label>
                                 <input type="text" class="form-control" name="name">
+                                @error('name')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
                                 <div class="input-group-append">
                                 </div>
                               </div>
                               <div class="mb-3">
                                   <label for="exampleInputEmail1" class="form-label">Email</label>
                                   <input type="text" name = "email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                  @error('email')
+                                  <div class="alert alert-danger">{{ $message }}</div>
+                                  @enderror
                                 </div>
                                 <div class="mb-3">
                                   <label for="exampleInputEmail1" class="form-label">Password</label>
                                   <input type="text" name = "password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                  @error('password')
+                                  <div class="alert alert-danger">{{ $message }}</div>
+                                  @enderror
                                 </div>
                                 <button type="submit" class="btn btn-primary">Submit</button>
                             </form>

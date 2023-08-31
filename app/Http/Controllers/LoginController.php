@@ -23,6 +23,11 @@ class LoginController extends Controller
      return view('register');
     }
     public function registerUser(request $request){
+        $this->validate($request,[
+            'name' =>'required|min:1|max:100',
+            'email'=>'required|min:1|max:100',
+            'password'=>'required|min:1|max:100'
+        ]);
         User::create([
             'name' => $request->name,
             'email' => $request->email,

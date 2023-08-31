@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Test</title>
+  <title>Input Data</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -63,17 +63,8 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="/register" class="nav-link">
-              <i class="nav-icon fas fa-user"></i>
-              <p>
-                Tambah User
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
             <a href="/logout" class="nav-link">
                 <i class="nav-icon fas fa-sign-out-alt"></i>
-
               <p>
                 Logout
               </p>

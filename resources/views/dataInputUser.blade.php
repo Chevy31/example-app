@@ -1,4 +1,4 @@
-@extends('layout.admin')
+@extends('layout.user')
 @push('css')
       <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -92,12 +92,12 @@
                           <th scope="row">{{$index + $data ->firstItem()}}</th>
                           <td>{{$row->nik}}</td>
                           <td>{{$row->nama}}</td>
-                          <td>{{ Carbon\Carbon::parse($row->tl)->format('d-m-Y') }}</td>
+                          <td>{{Carbon\Carbon::parse($row->tl)->format('d-m-YY')}}</td>
                           <td>{{$row->jenisKelamin}}</td>
                           <td>{{$row->alamat}}</td>
                           <td>{{$row->statusperkawinan}}</td>
                           <td>{{$row->pekerjaan}}</td>
-                          <td>0{{$row->telephone}}</td>
+                          <td>{{$row->telephone}}</td>
                           <td>
                               <a href = "/tampildata/{{$row->id}}" class="btn btn-info">Edit</a>
                               <a href="#" class="btn btn-danger delete" data-id="{{ $row->id }}">Delete</a>

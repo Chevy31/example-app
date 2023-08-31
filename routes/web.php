@@ -14,11 +14,15 @@ use App\Http\Controllers\LoginController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::group(['middleware'=>['auth','aksesuser:admin']], function(){
+    Route::get('/',[InputController::class, 'indexAdmin'])->name('home');
+    Route::get('/register',[LoginController::class, 'register'])->name('register');
+});
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-Route::get('/',[InputController::class, 'index'])->name('home');
+Route::group(['middleware'=>['auth','aksesuser:user']], function(){
+    Route::get('/',[InputController::class, 'indexUser']);
+});
+
 Route::get('/tambahdata1',[InputController::class, 'tambahdata1'])->name('tambahdata1');
 Route::post('/insertdata',[InputController::class, 'insertdata'])->name('insertdata');
 Route::get('/tampildata/{id}',[InputController::class, 'tampildata'])->name('tampildata');
@@ -31,8 +35,6 @@ Route::get('/eksportexcel',[InputController::class, 'eksportexcel'])->name('eksp
 Route::get('/login',[LoginController::class, 'login'])->name('login');
 Route::post('/loginProcess',[LoginController::class, 'loginProcess'])->name('loginProcess');
 
-
-Route::get('/register',[LoginController::class, 'register'])->name('register');
 Route::post('/registerUser',[LoginController::class, 'registerUser'])->name('registerUser');
 
 Route::get('/logout',[LoginController::class, 'logout'])->name('logout');
