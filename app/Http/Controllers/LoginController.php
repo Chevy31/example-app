@@ -14,7 +14,7 @@ class LoginController extends Controller
     }
     public function loginProcess(Request $request){
         if(Auth::attempt($request->only('email','password'))){
-            return redirect('/');
+            return redirect ('/home');
         }
 
         return \redirect('login');

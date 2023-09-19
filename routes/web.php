@@ -15,14 +15,14 @@ use App\Http\Controllers\LoginController;
 |
 */
 Route::group(['middleware'=>['auth','aksesuser:admin']], function(){
-    Route::get('/',[InputController::class, 'indexAdmin'])->name('home');
-    Route::get('/register',[LoginController::class, 'register'])->name('register');
+    Route::get('/',[InputController::class, 'indexAdmin']);
 });
 
 Route::group(['middleware'=>['auth','aksesuser:user']], function(){
-    Route::get('/',[InputController::class, 'indexUser']);
+    Route::get('/home',[InputController::class, 'indexUser']);
 });
 
+Route::get('/register',[LoginController::class, 'register'])->name('register');
 Route::get('/tambahdata1',[InputController::class, 'tambahdata1'])->name('tambahdata1');
 Route::post('/insertdata',[InputController::class, 'insertdata'])->name('insertdata');
 Route::get('/tampildata/{id}',[InputController::class, 'tampildata'])->name('tampildata');
@@ -36,5 +36,6 @@ Route::get('/login',[LoginController::class, 'login'])->name('login');
 Route::post('/loginProcess',[LoginController::class, 'loginProcess'])->name('loginProcess');
 
 Route::post('/registerUser',[LoginController::class, 'registerUser'])->name('registerUser');
+Route::get('/register',[LoginController::class, 'register'])->name('register');
 
 Route::get('/logout',[LoginController::class, 'logout'])->name('logout');
