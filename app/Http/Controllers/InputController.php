@@ -49,7 +49,7 @@ class InputController extends Controller
         ]);
         Input::create($request->all());
 
-        return redirect()->route('home')-> with('success','Data Added');
+        return redirect('/')-> with('success','Data Added');
         //return redirect()-> route('pegawai');
     }
     public function tampildata($id){
@@ -63,12 +63,12 @@ class InputController extends Controller
             return redirect(Session('halaman_url'))->with('success','Data berhasil di ubah');
         }
 
-        return redirect()->route('home')->with('success','Data berhasil di ubah');
+        return redirect('/')->with('success','Data berhasil di ubah');
     }
     public function deletedata($id){
         $data = Input::find($id);
         $data->delete();
-        return redirect()->route('home')->with('success','Data berhasil di hapus');
+        return redirect('/')->with('success','Data berhasil di hapus');
     }
     public function eksportpdf(){
         $data = Input::all();
