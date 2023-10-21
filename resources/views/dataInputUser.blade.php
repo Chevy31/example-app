@@ -23,11 +23,11 @@
     </div>
 
     <div class="container m-auto ">
-        <a href="/tambahdata1" class="btn btn-success">Tambah+</a>
+        <a href="/tambahdata2" class="btn btn-success">Tambah+</a>
         {{ Session::get('halaman_url ') }}
         <div class="row g-3 align-items-center mt-2">
             <div class="col-auto">
-                <form action="/" method="GET">
+                <form action="/home" method="GET">
                     <input type="search" id="inputPassword6" name="search" class="form-control" placeholder = "Cari Nama"
                         aria-describedby="passwordHelpInline">
                 </form>
@@ -144,7 +144,7 @@
         })
             .then((willDelete) => {
                 if (willDelete) {
-                    window.location = "/deletedata/" + pegawaiid + ""
+                    window.location = "/deletedataUser/" + pegawaiid + ""
                     swal("Data berhasil di hapus", {
                         icon: "success",
                     });

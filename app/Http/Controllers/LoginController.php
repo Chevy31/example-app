@@ -17,7 +17,7 @@ class LoginController extends Controller
             return redirect ('/home');
         }
 
-        return \redirect('login');
+        return redirect('/login');
     }
     public function register(){
      return view('register');

@@ -36,7 +36,7 @@
   <!-- /.navbar -->
 <aside class="main-sidebar sidebar-light-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="/" class="brand-link">
+    <a href="/home" class="brand-link">
     <img src="{{asset ('template/dist/img/BJBlogo.png') }}" alt="Logo"  class="img-fluid mx-auto d-block"width = 40% style="opacity: .8">
     </a>
 
@@ -55,7 +55,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item">
-            <a href="/" class="nav-link">
+            <a href="/home" class="nav-link">
               <i class="nav-icon far fa-image"></i>
               <p>
                 Data KTP

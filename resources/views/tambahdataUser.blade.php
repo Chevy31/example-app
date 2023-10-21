@@ -1,4 +1,4 @@
-@extends('layout.admin')
+@extends('layout.user')
 @section('content')
 <body>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
@@ -10,7 +10,7 @@
               <div class = "col-8">
                   <div class = "card">
                       <div class = "card-body">
-                          <form action="/insertdata" method="POST" encytpe="multipart/form-data">
+                          <form action="/insertdata2" method="POST" encytpe="multipart/form-data">
                               @csrf
                               <div class="mb-3">
                                     <label for="exampleInputEmail1" class="form-label">NIK</label>
